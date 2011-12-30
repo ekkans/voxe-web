@@ -2,9 +2,6 @@ class window.ElectionModel extends Backbone.Model
   
   # http://voxe.org/platform/models/election
   
-  initialize: ->
-    #
-  
   name: ->
     @get "name"
   
@@ -22,7 +19,7 @@ class window.ElectionModel extends Backbone.Model
     object
   
   parse: (response)->
-    response.election
+    response.response.election
   
   url: ->
     "/api/v1/elections/#{@id}"
