@@ -41,7 +41,7 @@ class Ability
     else
       # Visitor
 
-      can [:read, :search], Election
+      can [:read, :search, :comparisons], Election
       can [:read, :elections], Candidate
       can :search, Proposition
       can [:read, :propositions, :search], Tag

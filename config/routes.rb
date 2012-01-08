@@ -23,6 +23,7 @@ Joinplato::Application.routes.draw do
       resources :elections, except: :index do
         member do
           post :addtag
+          get :comparisons
         end
         collection do
           get :search

@@ -42,5 +42,9 @@ class Api::V1::ElectionsController < Api::V1::ApplicationController
       render text: {errors: @election_tag.errors}.to_json, status: :unprocessable_entity, layout: 'api_v1'
     end
   end
+  
+  # GET /api/v1/elections/1/comparisons
+  def comparisons
+  end
 
 end

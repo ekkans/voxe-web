@@ -51,3 +51,26 @@
   
 %p
   %a.btn.small Try
+  
+.page-header
+  %h2
+    %small GET
+    = "/elections/{id}/comparisons"
+
+%p Return information about a comparison.
+
+%h3 Parameters
+%table.bordered-table
+  %tbody
+    %tr
+      %td candidacyIds
+      %td id1,id2,id3
+    %tr
+      %td tagId
+      %td id1 (only one id accepted)
+      
+%p
+  %span.label EXAMPLE
+
+%pre
+  http://voxe.org/api/v1/elections/4ed1cb0203ad190006000001/comparisons
