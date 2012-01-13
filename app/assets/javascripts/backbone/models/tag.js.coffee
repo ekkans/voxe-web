@@ -3,7 +3,10 @@ class window.TagModel extends Backbone.Model
   # http://voxe.org/platform/models/tag
 
   url: ->
-    "/api/v1/tags/#{@id}"
+    if @id
+      "/api/v1/tags/#{@id}"
+    else
+      "/api/v1/tags/"
 
   initialize: ->
     @tags = new TagsCollection(@get 'tags', parent_tag: @)
