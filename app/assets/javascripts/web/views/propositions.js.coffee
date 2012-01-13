@@ -25,9 +25,7 @@ class window.PropositionsView extends Backbone.View
           candidacy.candidates = c.candidates
           if tags_propositions[section.id] && tags_propositions[section.id][candidacy.id]
             candidacy.propositions = tags_propositions[section.id][candidacy.id]
-          else
-            candidacy.propositions = []
-          candidacy
+            candidacy
         sections.push section
       category.sections = sections
       categories.push category
