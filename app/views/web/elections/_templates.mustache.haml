@@ -35,9 +35,9 @@
 #propositions-template
   :plain
     {{#categories}}
-    <h2>{{name}}</h2>
+    <h2 id="tag-{{id}}">{{name}}</h2>
       {{#sections}}
-      <h3>{{name}}</h3>
+      <h3 id="tag-{{id}}">{{name}}</h3>
         <ul>
           {{#candidacies}}
             <li>

@@ -11,9 +11,10 @@ class window.TagsListView extends Backbone.View
     @last = null
   
   events:
-    "click li": "themeClick"
+    "click li": "tagClick"
+    "click li a": "subtagClick"
       
-  themeClick: (e)->
+  tagClick: (e)->
     tagId = $(e.currentTarget).attr("tag-id")
     if (tagId != @last)
       $('#propositions').hide()
@@ -23,6 +24,10 @@ class window.TagsListView extends Backbone.View
       tag = _.find app.models.election.tags.models, (tag) ->
         tag.id == tagId
       app.models.tag.set tag
+      
+  subtagClick: (e)->
+    tagId = $(e.currentTarget).attr("tag-id")
+    $.scrollTo($('#tag-' + tagId), 200)
     
   render: ->
     $(@el).html Mustache.to_html($('#tags-list-template').html().replace('&gt;', '>'), tags: @tags(), {"subtags": $('#subtags-list-template').html()})

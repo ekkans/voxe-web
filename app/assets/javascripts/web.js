@@ -10,6 +10,7 @@
 //= require libs/backbone-0.5.3
 //= require libs/mustache-2011-10-11
 //= require libs/jquery.backstretch.min
+//= require libs/jquery.scrollto.min
 
 //= require_tree './backbone/models'
 //= require_tree './backbone/collections'
