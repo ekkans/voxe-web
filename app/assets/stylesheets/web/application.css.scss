@@ -60,11 +60,11 @@ a {
 }
 
 #select-candidates, #specific {
-	margin:0 0 0 -175px;
-	top:30%;
+	margin:0 0 0 -350px;
+	top:20%;
 	left:50%;
 	position:fixed;
-	width:350px;
+	width:700px;
 	text-align:center;
 	background:white;
 	color: #333;
@@ -136,18 +136,21 @@ a {
 	text-align:left;
 	display:none;
 	overflow:auto;
-	height:189px;
+	height:252px;
 }
 
 
 #selection li {
-	padding-left:40px;
-	padding-top:10px;
-	border-top: 1px solid #ccc;
-	cursor:pointer;
-	clear:both;
-	height:52px;
-	background:#f3f3f3;
+	padding-left: 40px;
+    padding-top: 10px;
+    border-top: 1px solid #CCC;
+    cursor: pointer;
+    height: 52px;
+    background: #F3F3F3;
+    position: relative;
+    float: left;
+    width: 309px;
+    border-left: 1px solid #ccc;
 }
 
 #selection li:hover {
@@ -163,11 +166,6 @@ a {
 #selection div {
 	width:350px;
 	float:left;
-}
-
-#selection li {
-	position:relative;
-	overflow:hidden;
 }
 
 #selection li img {
@@ -205,17 +203,17 @@ a {
 	background-image: linear-gradient(top, #62c462, #57a957);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#57a957', GradientType=0);
 	position: absolute;
-	left: -78px;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
+	left: 262px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 	font-size: 10px;
 	color: white;
 	padding: 0px 10px;
 	top: 18px;
-	padding-left:20px;
 	font-weight:bold;
     display:none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 #compare #menu {

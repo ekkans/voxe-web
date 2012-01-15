@@ -7,15 +7,15 @@ class window.CandidaciesListView extends Backbone.View
     @election().bind "change", @render, @
       
   events:
-    "mouseenter li": "insideCandidate"
-    "mouseleave li": "outsideCandidate"
+    #"mouseenter li": "insideCandidate"
+    #"mouseleave li": "outsideCandidate"
     "click li": "selectCandidate"
 
-  insideCandidate:(e) ->
-    $('span', e.currentTarget).clearQueue().animate({left: '-14'}, 200)
-      
-  outsideCandidate:(e) ->
-    $('span', e.currentTarget).clearQueue().animate({left: '-78'}, 200)
+  # insideCandidate:(e) ->
+  #   $('span', e.currentTarget).clearQueue().animate({left: '-14'}, 200)
+  #     
+  # outsideCandidate:(e) ->
+  #   $('span', e.currentTarget).clearQueue().animate({left: '-78'}, 200)
     
   selectCandidate:(e) ->
     $('span', e.currentTarget).fadeToggle(100);
