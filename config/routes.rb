@@ -86,17 +86,20 @@ Joinplato::Application.routes.draw do
   end
   
   # webviews
-  resources :webviews, :only => :index do
-    collection do
-      get :compare
-      get :proposition
-    end
+  namespace :webviews, format: "touch" do
+    resources :comparisons, only: :index
+    resources :propositions, only: :show
   end
+  # resources :webviews, :only => :index do
+  #   collection do
+  #     get :compare
+  #     get :proposition
+  #   end
+  # end
   
   # web-app
-  
-  namespace :plugins do
-    resources :compare, :only => :index
+  namespace :embed do
+    resources :elections, only: :show
   end
   
   # api doc
@@ -124,7 +127,7 @@ Joinplato::Application.routes.draw do
         get :organization
       end
     end
-    resources :plugins, :only => :index do
+    resources :embed, :only => :index do
       collection do
         get :button
         get :bookmarklet

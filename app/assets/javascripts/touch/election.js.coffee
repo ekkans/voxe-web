@@ -8,12 +8,10 @@ class window.VoxeElection
     app.collections.elections = new ElectionsCollection()
     
     app.models.election = new ElectionModel()
-    app.models.tag = new TagModel()
     
     app.collections.tags = app.models.election.tags
     app.collections.candidacies = app.models.election.candidacies
     
-    app.collections.selectedCandidacies = new CandidaciesCollection()
     app.collections.propositions = new PropositionsCollection()
     
     app.views.application = new ApplicationView(el: "#application-view")
