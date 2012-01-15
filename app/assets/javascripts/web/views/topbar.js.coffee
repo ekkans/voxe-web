@@ -8,7 +8,7 @@ class window.TopbarView extends Backbone.View
   
   selection: ->
     $('#compare').fadeOut()
-    $("#select-candidates").animate({'top': '30%'}, 500)
+    $("#select-candidates").animate({'top': '20%'}, 500)
     
   render: ->
     s = 's' if app.collections.selectedCandidacies.length >= 2

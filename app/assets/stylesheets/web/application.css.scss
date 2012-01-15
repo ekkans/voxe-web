@@ -203,17 +203,19 @@ a {
 	background-image: linear-gradient(top, #62c462, #57a957);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#57a957', GradientType=0);
 	position: absolute;
-	left: 262px;
+	left: 265px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	font-size: 10px;
 	color: white;
-	padding: 0px 10px;
-	top: 18px;
+	padding: 0px 6px;
+	top: 20px;
 	font-weight:bold;
     display:none;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border: 1px solid #57A957;
+    line-height:21px;
 }
 
 #compare #menu {

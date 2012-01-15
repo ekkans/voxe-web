@@ -10,7 +10,11 @@ class window.PropositionView extends Backbone.View
     
   candidacies:(proposition) ->
     _.map proposition.candidacy(), (c) ->
-      app.collections.selectedCandidacies.get c
+      c = app.collections.candidacies.get c
+      c = c.toJSON()
+      candidacy = {}
+      candidacy.candidates = c.candidates
+      candidacy
   
   proposition: ->
     proposition = app.collections.propositions.get app.models.proposition.id
@@ -19,6 +23,5 @@ class window.PropositionView extends Backbone.View
   
   render: ->
     proposition = @proposition()
-    console.log proposition
     $("#quote", @el).html Mustache.to_html($('#proposition-template').html(), proposition: proposition)
     $('.modal').fadeIn(200)
