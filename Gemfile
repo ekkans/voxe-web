@@ -37,6 +37,10 @@ group :test do
   gem 'factory_girl_rails'
 end
 
+group :development, :test do
+  gem "jasminerice"
+end
+
 gem 'jquery-rails'
 
 # MongoDB adapter and an optimizer for MongoDB

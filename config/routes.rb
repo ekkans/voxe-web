@@ -41,6 +41,8 @@ end
 
 Joinplato::Application.routes.draw do
   
+  mount Jasminerice::Engine => "/jasmine" if defined? Jasminerice
+
   # redirect www to .
   match "/" => redirect {|params| "http://voxe.org" }, :constraints => {:subdomain => "www"}
   match "/*path" => redirect {|params| "http://voxe.org/#{params[:path]}" }, :constraints => {:subdomain => "www"}
