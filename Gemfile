@@ -38,6 +38,7 @@ group :test do
 end
 
 group :development, :test do
+  gem "guard-jasmine"
   gem "jasminerice"
 end
 
