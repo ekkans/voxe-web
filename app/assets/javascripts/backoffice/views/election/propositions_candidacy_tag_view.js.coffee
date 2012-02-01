@@ -5,6 +5,8 @@ class Backoffice.Views.Election.PropositionsCandidacyTagView extends Backbone.Vi
     'click button.show-proposition-form': 'showPropositionForm'
     'submit .add-proposition': 'addProposition'
     'click .delete-proposition': 'deleteProposition'
+    'submit .add-embed': 'addEmbed'
+    'click .delete-embed': 'deleteEmbed'
 
   initialize: ->
     @flash = {}
@@ -16,6 +18,7 @@ class Backoffice.Views.Election.PropositionsCandidacyTagView extends Backbone.Vi
     @propositions.bind 'reset', @render, @
     @propositions.bind 'remove', @render, @
     @propositions.bind 'add', @render, @
+    @propositions.each (p) -> p.bind 'change', ( -> console.log 'arf'), @
     @propositions.fetch({data: {electionId: @election.id, candidacyIds: @candidacy.id, tagIds: @tag.id}})
 
   render: ->
@@ -69,3 +72,12 @@ class Backoffice.Views.Election.PropositionsCandidacyTagView extends Backbone.Vi
       view = @
       proposition.destroy complete: (response) ->
         view.propositions.remove proposition if response.status == 200
+
+  addEmbed: (event) ->
+    event.preventDefault()
+    form = $(event.target)
+    propositionId = form.parent().parent().data().propositionId
+    proposition = @propositions.find (proposition) -> proposition.id == propositionId
+    proposition.addEmbed($('input[name=url]', form).val())
+
+  deleteEmbed: ->
