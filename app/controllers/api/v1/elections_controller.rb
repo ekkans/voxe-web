@@ -1,6 +1,6 @@
 class Api::V1::ElectionsController < Api::V1::ApplicationController
 
-  #caches_action :show, :expires_in => 1.hour
+  caches_action :search
 
   # GET /api/v1/elections/1
   def show
@@ -32,8 +32,7 @@ class Api::V1::ElectionsController < Api::V1::ApplicationController
   # PUT /api/v1/elections/1
   def update
     if @election.update_attributes params[:election]
-      #expire_action action: "show", id: @election.id
-      
+      expire_action action: :search
       render 'api/v1/elections/show.rabl', status: :ok
     else
       render text: {errors: @election.errors}.to_json, status: :unprocessable_entity, layout: 'api_v1'
@@ -63,7 +62,7 @@ class Api::V1::ElectionsController < Api::V1::ApplicationController
     @election.candidacies.build candidates: candidates
 
     if @election.save
-      #expire_action action: "show", id: @election.id
+      expire_action action: :search
       render 'api/v1/elections/show.rabl', status: :created
     else
       render text: {errors: @election.errors}.to_json, status: :unprocessable_entity, layout: 'api_v1'
