@@ -105,10 +105,10 @@ Joinplato::Application.routes.draw do
       resources :propositions do
         collection do
           get :search
-          post :addcomment
         end
         member do
           get :comments
+          post :addcomment
           post :addembed
           delete :removeembed
         end
@@ -123,7 +123,8 @@ Joinplato::Application.routes.draw do
       resources :users do
         collection do
           get :search
-          post :signin
+          get :verify
+          get :self
         end
       end
 
