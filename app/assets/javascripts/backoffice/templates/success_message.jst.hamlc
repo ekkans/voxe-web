@@ -1,2 +1,0 @@
-.alert-message.success
-  %p= @message

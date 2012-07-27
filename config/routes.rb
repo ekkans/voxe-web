@@ -15,9 +15,9 @@ Joinplato::Application.routes.draw do
   # admin
 
   namespace :admin do
-    match '/' => 'dashboard#index'
+    root to: 'dashboard#index'
   end
-  
+
   # API
 
   namespace :api, format: :json do
